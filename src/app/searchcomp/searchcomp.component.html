@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>🔍 Application Records</h2>
+
+  <!-- Search Box -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search records..." class="search-box">
+
+  <!-- Cards Layout -->
+  <div class="card-container">
+      <div *ngFor="let item of filteredData" class="card">
+          <h3>{{ item.NAME }}</h3>
+          <p><strong>Region:</strong> {{ item.REGION }}</p>
+          <p><strong>NAMESPACE:</strong> {{ item.NAMESPACE }}</p>
+          <p><strong>Director:</strong> {{ item.Director }}</p>
+          <p><strong>Manager:</strong> {{ item.Manager }}</p>
+          <p><strong>Lead:</strong> {{ item.Lead }}</p>
+          <p><strong>Developer:</strong> {{ item.Developer }}</p>
+          
+      </div>
+  </div>
+
+  <!-- No Data Found Message -->
+  <p *ngIf="filteredData.length === 0" class="no-data">No matching records found.</p>
+</div>
